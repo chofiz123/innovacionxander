@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación Tecnológica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #7dd3fc;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: rgba(26, 26, 46, 0.8);
+            margin: 40px 0;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            font-size: 2.5em;
+            color: #00d4ff;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .color-acento {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2a4d6e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 255, 136, 0.3);
+            border-color: #00ff88;
+        }
+
+        .card h3 {
+            color: #00ff88;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .card p {
+            color: #b0c4de;
+            line-height: 1.8;
+        }
+
+        /* Estilos específicos para el mapa de Instagram */
+        .image-map-container {
+            text-align: center;
+            margin: 60px auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .image-map-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #00d4ff;
+        }
+
+        .image-map-wrapper {
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #00d4ff 0%, #00ff88 25%, #00d4ff 50%, #0ea5e9 75%, #0284c7 100%);
+            padding: 20px;
+        }
+
+        .image-map-wrapper:hover {
+            box-shadow: 0 12px 40px rgba(0, 255, 136, 0.6);
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .image-map-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            background: #1a1a2e;
+            padding: 10px;
+        }
+
+        .map-section {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
+            padding: 60px 20px;
+            margin: 40px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .intro-text {
+            font-size: 1.2em;
+            color: #b0c4de;
+            text-align: center;
+            margin: 30px 0;
+            line-height: 2;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #7dd3fc;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .image-map-container h2 {
+                font-size: 2em;
+            }
+
+            .image-map-wrapper {
+                padding: 15px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Innovación Tecnológica</h1>
+        <p class="subtitle">El futuro se construye hoy</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>¿Qué es la <span class="color-acento">Innovación Tecnológica</span>?</h2>
+            <p class="intro-text">
+                La innovación tecnológica es el motor que impulsa el progreso de la humanidad. 
+                A través de la creatividad, la investigación y el desarrollo, transformamos ideas 
+                en soluciones que mejoran nuestra calidad de vida y revolucionan industrias enteras.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Áreas de <span class="color-acento">Innovación</span></h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🤖 Inteligencia Artificial</h3>
+                    <p>
+                        Sistemas capaces de aprender, razonar y adaptarse. La IA está revolucionando 
+                        desde la medicina hasta la educación, creando soluciones más inteligentes 
+                        y eficientes para problemas complejos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Internet de las Cosas</h3>
+                    <p>
+                        Conectando dispositivos y creando hogares inteligentes. El IoT permite 
+                        la comunicación entre objetos cotidianos, optimizando procesos y 
+                        mejorando la automatización en todos los ámbitos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔐 Blockchain</h3>
+                    <p>
+                        Tecnología de registros distribuidos que garantiza transparencia y seguridad. 
+                        Más allá de las criptomonedas, revoluciona cadenas de suministro, 
+                        contratos inteligentes y verificación de datos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>☁️ Computación en la Nube</h3>
+                    <p>
+                        Acceso a recursos informáticos bajo demanda. Permite escalabilidad, 
+                        reducción de costos y colaboración global, transformando la forma 
+                        en que las empresas operan y almacenan información.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🧬 Biotecnología</h3>
+                    <p>
+                        La fusión de biología y tecnología abre nuevas fronteras en medicina 
+                        personalizada, edición genética y desarrollo de tratamientos innovadores 
+                        para enfermedades antes incurables.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Exploración Espacial</h3>
+                    <p>
+                        Tecnologías que impulsan la conquista del espacio. Desde satélites 
+                        que mejoran las comunicaciones hasta misiones que buscan vida en 
+                        otros planetas, expandiendo los límites de lo posible.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>El Impacto en Nuestro <span class="color-acento">Futuro</span></h2>
+            <p class="intro-text">
+                La innovación tecnológica no solo mejora procesos existentes, sino que crea 
+                posibilidades completamente nuevas. Desde la sostenibilidad ambiental hasta 
+                la democratización del conocimiento, la tecnología es la clave para resolver 
+                los desafíos más grandes de la humanidad.
+            </p>
+        </section>
+
+        <section class="map-section">
+            <div class="image-map-container">
+                <h2>Sígueme en <span class="color-acento">Instagram</span></h2>
+                
+                <div class="image-map-wrapper">
+                    <!-- Imagen del logo de Instagram con mapa de áreas clicables -->
+                    <img class="img" 
+                         src="https://1000marcas.net/wp-content/uploads/2019/11/Instagram-Logosu.png" 
+                         alt="Logo de Instagram" 
+                         usemap="#instagram-map">
+                    
+                    <!-- Definición del mapa de imagen -->
+                    <map name="instagram-map">
+                        
+                        <!-- Área del ícono de cámara -->
+                        <area shape="rect" 
+                              coords="20, 150, 100, 250" 
+                              href="https://www.instagram.com/gzmzaaid?igsh=emZhcThzcWMwY3hm" 
+                              alt="Sígueme en Instagram - Ícono"
+                              title="Visita mi perfil de Instagram"
+                              target="_blank">
+                        
+                        <!-- Área central del logo -->
+                        <area shape="rect" 
+                              coords="150, 100, 350, 350" 
+                              href="https://www.instagram.com/gzmzaaid?igsh=emZhcThzcWMwY3hm" 
+                              alt="Sígueme en Instagram - Centro"
+                              title="Visita mi perfil de Instagram"
+                              target="_blank">
+                        
+                        <!-- Área circular -->
+                        <area shape="circle" 
+                              coords="400, 400, 60" 
+                              href="https://www.instagram.com/gzmzaaid?igsh=emZhcThzcWMwY3hm" 
+                              alt="Sígueme en Instagram - Círculo"
+                              title="Visita mi perfil de Instagram"
+                              target="_blank">
+                        
+                        <!-- Área por defecto -->
+                        <area shape="default" 
+                              href="https://www.instagram.com/gzmzaaid?igsh=emZhcThzcWMwY3hm" 
+                              alt="Sígueme en Instagram"
+                              title="Visita mi perfil de Instagram"
+                              target="_blank">
+                    </map>
+                </div>
+                
+                <p style="margin-top: 20px; color: #7dd3fc; font-size: 1.1em;">
+                    Haz clic en cualquier parte del logo para visitar mi perfil 📸
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Innovación Tecnológica | Construyendo el futuro</p>
+    </footer>
+</body>
+</html>
