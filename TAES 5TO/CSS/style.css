@@ -1,0 +1,33 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background: #eeaeae;
+    background: linear-gradient(345deg, rgba(238, 174, 174, 1) 0%, rgba(134, 173, 217, 1) 100%);
+}
+
+.menu{
+    padding: 5px ; 
+    background: #092327;
+    width:90% ;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.menu li a{
+    text-decoration: none;
+    color:white;
+    padding: 20px;
+    display: block;
+
+}
+.menu li{
+    display:inline-block;
+    text-align:center;
+}
+.menu li a:hover{
+ background: #ef8354;
+ border-radius: 25px;
+}
