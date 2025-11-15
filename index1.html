@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovación de la Tecnología</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Oswald", sans-serif;
+            background: #5846bd;
+            background: linear-gradient(90deg, rgba(88, 70, 189, 1) 0%, rgba(109, 237, 162, 1) 50%, rgba(88, 70, 189, 1) 100%);
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin-left: 280px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilos del Header y Menú */
+        header {
+            background: rgba(9, 35, 39, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 280px;
+            z-index: 1000;
+            box-shadow: 8px 0 32px rgba(0, 0, 0, 0.3);
+            border-right: 3px solid #ef8354;
+            overflow-y: auto;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+            margin: 0;
+        }
+
+        .menu li {
+            margin: 8px 20px;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .menu li a:hover::before {
+            left: 100%;
+        }
+
+        .menu li a:hover {
+            background: #ef8354;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(239, 131, 84, 0.4);
+        }
+
+        /* Estilos de Secciones */
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            margin: 30px auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.8s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #092327;
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ef54cd, #0b7269);
+            border-radius: 2px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin: 30px 0 15px;
+            font-weight: 600;
+            border-left: 5px solid #be54ef;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #092327;
+            font-size: 1.3em;
+            margin: 15px 0 10px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin: 15px 0;
+            text-align: justify;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        /* Estilos de Listas */
+        ul,
+        ol {
+            margin: 20px 0 20px 40px;
+        }
+
+        ul li,
+        ol li {
+            margin: 10px 0;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li::before {
+            content: '▸';
+            color: #be54ef;
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+            font-size: 1.2em;
+        }
+
+        ol li {
+            padding-left: 5px;
+        }
+
+        /* Estilos de Imágenes */
+        img {
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .image-right {
+            float: right;
+            margin: 0 0 20px 20px;
+        }
+
+        /* Estilos de Enlaces */
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        a:hover {
+            color: #be54ef;
+            border-bottom: 2px solid #be54ef;
+        }
+
+        /* Estilos de Tabla */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            background: white;
+        }
+
+        tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Línea divisoria */
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ef8354, transparent);
+            margin: 40px 0;
+        }
+
+        /* Destacados y texto especial */
+        b,
+        strong {
+            color: #092327;
+            font-weight: 600;
+        }
+
+        i,
+        em {
+            color: #764ba2;
+        }
+
+        /* Contenedor de texto con imagen */
+        .content-with-image {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .content-with-image .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Tarjetas informativas */
+        .info-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Animación para listas */
+        ul li,
+        ol li {
+            animation: slideIn 0.5s ease-in-out;
+            animation-fill-mode: both;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                position: sticky;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 3px solid #ef8354;
+            }
+
+            body {
+                margin-left: 0;
+            }
+
+            .menu {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            .menu li {
+                margin: 5px 10px;
+            }
+
+            .menu li a {
+                padding: 12px 20px;
+            }
+
+            .menu li a:hover {
+                transform: translateY(-3px);
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .section {
+                padding: 20px;
+                margin: 15px auto;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            h3 {
+                font-size: 1.3em;
+            }
+
+            img[align="right"] {
+                float: none;
+                display: block;
+                margin: 20px auto;
+            }
+
+            .content-with-image {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th,
+            td {
+                padding: 12px;
+            }
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#inf1">¿Qué es?</a></li>
+                <li><a href="#inf2">Biotecnología Médica</a></li>
+                <li><a href="#inf3">Biotecnología Agrícola</a></li>
+                <li><a href="#inf4">Biotecnología Industrial</a></li>
+                <li><a href="#inf5">Comentarios</a></li>
+                <li><a href="#inf6">Redes Sociales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Sección 1: ¿Qué es? -->
+        <div id="inf1" class="section">
+            <h1>Qué es la Biotecnología</h1>
+
+            <p>
+                La <b>biotecnología</b> no es una ciencia en sí, sino un <i>enfoque multidisciplinario</i> que integra
+                áreas
+                como biología, genética, química e ingeniería. Desde la antigüedad, el ser humano la
+                ha aplicado en actividades como la fermentación de alimentos, la producción de bebidas alcohólicas y el
+                mejoramiento de
+                cultivos y animales.
+            </p>
+
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p style="color: #667eea; font-weight: 600;">Sus aplicaciones tradicionales incluyen el:</p>
+
+                    <ul>
+                        <li><b>Compostaje</b></li>
+                        <li><b>La elaboración de vino</b></li>
+                        <li><b>Cerveza</b></li>
+                        <li><b>Vacunas</b></li>
+                        <li><b>Quesos</b></li>
+                    </ul>
+                </div>
+                <img src="https://img2.rtve.es/imagenes/eeuu-aprueba-primera-vacuna-contra-vrs/1683154233555.jpg"
+                    height="150" class="image-right">
+            </div>
+
+            <p>
+                La biotecnología moderna, basada en técnicas de biología celular y molecular,
+                especialmente la manipulación del ADN, ha transformado sectores como la agricultura, la medicina, la
+                energía y el manejo de residuos, generando un gran impacto científico, económico y
+                ambiental. En conjunto, abarca desde prácticas tradicionales hasta métodos
+                avanzados de ingeniería genética y cultivo celular.
+            </p>
+
+            <div class="info-card">
+                <p style="font-size: 15px; margin: 0;">
+                    Para seguir observando más información de este tema este es el
+                    <a href="https://iqs.edu/es/blog/campos-de-aplicacion-de-la-biotecnologia-conoce-mas-sobre-ella/"
+                        target="_blank">link</a>
+                </p>
+            </div>
+
+            <div class="image-container">
+                <img src="https://www.bbva.com/wp-content/uploads/2021/12/BBVA-biotecnologia_apertura.jpg" height="250">
+            </div>
+
+            <h2>Historia y Evolución de la Biotecnología</h2>
+
+            <p>
+                La historia de la biotecnología se remonta a miles de años atrás, cuando nuestros ancestros comenzaron a
+                domesticar plantas y animales, aunque sin comprender los mecanismos genéticos subyacentes. Las primeras
+                civilizaciones descubrieron que podían fermentar granos para producir cerveza y pan, utilizando
+                levaduras de manera empírica. Los egipcios, hace aproximadamente 4000 años, ya empleaban procesos de
+                fermentación para elaborar cerveza y vino, mientras que los sumerios dejaron registros de la producción
+                de pan con levadura.
+            </p>
+
+            <p>
+                En la antigüedad, las culturas desarrollaron técnicas de mejoramiento genético mediante la selección
+                artificial. Los agricultores guardaban las semillas de las mejores plantas y criaban a los animales más
+                fuertes y productivos, generación tras generación. Este proceso gradual de selección permitió la
+                domesticación de especies como el trigo, el maíz, el arroz, el ganado bovino y los caballos. Sin
+                embargo, estos primeros biotecnólogos desconocían por completo los principios genéticos que regían estos
+                cambios.
+            </p>
+
+            <div class="info-card">
+                <h3>La Era Científica de la Biotecnología</h3>
+                <p>
+                    El verdadero avance científico llegó con los descubrimientos de Louis Pasteur en el siglo XIX.
+                    Pasteur demostró que los microorganismos eran responsables de la fermentación y desarrolló el
+                    proceso de pasteurización, revolucionando la industria alimentaria. Sus estudios sobre microbiología
+                    sentaron las bases para comprender cómo los organismos vivos podían ser utilizados en procesos
+                    industriales.
+                </p>
+                <p>
+                    Paralelamente, Gregor Mendel realizaba sus experimentos con guisantes, estableciendo las leyes
+                    fundamentales de la herencia genética. Aunque su trabajo pasó desapercibido durante décadas,
+                    posteriormente se reconoció como la piedra angular de la genética moderna. A principios del siglo
+                    XX, el redescubrimiento de las leyes de Mendel impulsó el estudio sistemático de la herencia.
+                </p>
+            </div>
+
+            <h2>La Revolución Molecular</h2>
+
+            <p>
+                El verdadero punto de inflexión ocurrió en 1953, cuando James Watson y Francis Crick descubrieron la
+                estructura de doble hélice del ADN. Este descubrimiento fundamental abrió la puerta a la comprensión de
+                cómo se almacena y transmite la información genética. Durante las décadas siguientes, los científicos
+                desarrollaron herramientas cada vez más sofisticadas para manipular el material genético.
+            </p>
+
+            <p>
+                En 1973, Stanley Cohen y Herbert Boyer crearon el primer organismo genéticamente modificado mediante la
+                técnica de ADN recombinante. Insertaron un gen de rana en una bacteria, demostrando que era posible
+                transferir genes entre especies completamente diferentes. Este logro marcó el nacimiento de la
+                ingeniería genética moderna y abrió posibilidades antes inimaginables.
+            </p>
+
+            <h2>Técnicas Fundamentales en Biotecnología</h2>
+
+            <h3>Tecnología del ADN Recombinante</h3>
+            <p>
+                La tecnología del ADN recombinante permite a los científicos cortar, modificar y pegar fragmentos de ADN
+                de diferentes organismos. Este proceso utiliza enzimas de restricción que actúan como tijeras
+                moleculares, cortando el ADN en sitios específicos. Los fragmentos deseados se insertan en vectores,
+                generalmente plásmidos bacterianos, que actúan como vehículos para introducir el ADN modificado en
+                células huésped.
+            </p>
+
+            <p>
+                Una vez dentro de la célula huésped, el ADN recombinante se integra y comienza a expresarse, produciendo
+                las proteínas codificadas por los genes insertados. Esta técnica ha permitido la producción masiva de
+                proteínas humanas importantes, como la hormona del crecimiento, factores de coagulación sanguínea y
+                anticuerpos monoclonales utilizados en tratamientos contra el cáncer.
+            </p>
+
+            <h3>Reacción en Cadena de la Polimerasa</h3>
+            <p>
+                La Reacción en Cadena de la Polimerasa, conocida como PCR por sus siglas en inglés, es una técnica que
+                revolucionó la biología molecular. Desarrollada por Kary Mullis en 1983, esta técnica permite amplificar
+                millones de veces una pequeña cantidad de ADN en cuestión de horas. El proceso implica ciclos repetidos
+                de calentamiento y enfriamiento que separan las hebras de ADN, permiten que los cebadores se unan a las
+                secuencias objetivo, y facilitan la síntesis de nuevas copias mediante una enzima polimerasa
+                termoestable.
+            </p>
+
+            <div class="info-card">
+                <h3>Biología Sintética</h3>
+                <p>
+                    La biología sintética representa la próxima frontera de la biotecnología. En lugar de simplemente
+                    modificar organismos existentes, esta disciplina busca diseñar y construir sistemas biológicos
+                    completamente nuevos desde cero. Los científicos están creando circuitos genéticos artificiales,
+                    genomas sintéticos y células con funciones programadas específicamente.
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Sección 2: Biotecnología Médica -->
+        <div id="inf2" class="section">
+            <h1>Biotecnología Médica</h1>
+
+            <h2>¿Qué es?</h2>
+
+            <div class="content-with-image">
+                <div class="text-content">
+                    <p>
+                        <b>La biotecnología médica emplea células vivas y otros elementos celulares</b> con el objetivo
+                        de
+                        desarrollar nuevos productos dirigidos a una <b>mejora de la salud y bienestar de las
+                            personas.</b> Así, la biotecnología
+                        médica estudia:
+                    </p>
+
+                    <ul>
+                        <li><b>La estructura genética humana y su secuenciación</b></li>
+                        <li><b>Los agentes patógenos (virus, bacterias…)</b></li>
+                        <li><b>La susceptibilidad al desarrollo de enfermedades genéticas</b></li>
+                        <li><b>La recombinación de células vivas y de proteínas</b></li>
+                    </ul>
+                </div>
+                <img src="https://escogemicarrera.com/wp-content/uploads/2020/07/a2-8-1536x1024.jpg" height="150"
+                    class="image-right">
+            </div>
+
+            <h2>Origen de Biotecnología Médica</h2>
+            <p>
+                El origen de la biotecnología médica está relacionado con el desarrollo de la biología molecular en los
+                años 70. En
+                las siguientes décadas, especialmente a finales de los 80 y en los 90 hubo un gran avance con la
+                investigación del
+                genoma humano o el uso de la primera terapia génica en una niña con una inmunodeficiencia. En los años
+                posteriores ha
+                habido grandes avances, siendo un hito importante el papel que ha jugado en el desarrollo de vacunas
+                contra la Covid-19 en
+                la pandemia iniciada en el 2020.
+            </p>
+
+            <div class="image-container">
+                <img src="https://curiosaweb.com/wp-content/uploads/2023/11/Resumen-de-la-historia-de-la-biotecnologia.jpg"
+                    height="500">
+            </div>
+
+            <h2>Aplicaciones de la biotecnología</h2>
+            <p>
+                En este punto, ya se tiene muy claro que esta disciplina ha sido de gran relevancia en el campo médico y
+                es que sus
+                avances han sido enormes gracias a ella.
+                Por ejemplo, desde que inició la utilización de procesos biotecnológicos, el salto en la prevención de
+                enfermedades
+                en el mundo, fue enorme.
+                De hecho, uno de los avances más significativos, se ha encontrado en la edición
+                genética a
+                través de la técnica CRISPR, por medio de la cual, es posible editar el genoma humano para tratar
+                algunas enfermedades genéticas.
+            </p>
+
+            <h2>Avances Recientes en Biotecnología Médica</h2>
+
+            <h3>Inmunoterapia contra el Cáncer</h3>
+            <p>
+                La inmunoterapia representa un cambio de paradigma en el tratamiento del cáncer. A diferencia de la
+                quimioterapia tradicional que ataca directamente las células cancerosas, la inmunoterapia fortalece el
+                sistema inmunológico del paciente para que reconozca y destruya las células tumorales. Los inhibidores
+                de puntos de control inmunológico, por ejemplo, bloquean proteínas que impiden que las células T ataquen
+                el cáncer, liberando al sistema inmune para combatir la enfermedad.
+            </p>
+
+            <p>
+                Las terapias CAR-T representan otra innovación revolucionaria. En este tratamiento, se extraen células T
+                del paciente, se modifican genéticamente en el laboratorio para expresar receptores de antígenos
+                quiméricos que reconocen células cancerosas específicas, y luego se reinfunden en el paciente. Estas
+                células T modificadas actúan como guerreros especializados que buscan y destruyen el cáncer.
+            </p>
+
+            <h2>Importancia de la Biotecnología</h2>
+
+            <div class="info-card">
+                <h3>Terapias avanzadas y medicina regenerativa</h3>
+                <p>
+                    La biotecnología ha impulsado el desarrollo de terapias avanzadas, como la terapia génica y la
+                    terapia celular.
+                    Estas terapias prometedoras se basan en la modificación y manipulación de células y genes para
+                    tratar enfermedades
+                    genéticas y condiciones médicas complejas.
+                </p>
+                <p>
+                    La terapia génica busca corregir defectos genéticos al introducir genes funcionales en el organismo,
+                    mientras que la terapia celular utiliza células vivas para reemplazar, reparar o regenerar tejidos
+                    dañados.
+                </p>
+            </div>
+
+            <div class="content-with-image">
+                <div class="text-content">
+                    <h2>Diagnóstico preciso y personalizado</h2>
+                    <p>
+                        La biotecnología ha mejorado significativamente el <b>diagnóstico médico</b> al permitir pruebas
+                        más precisas y
+                        personalizadas. Los avances en técnicas de secuenciación genómica y biomarcadores moleculares
+                        han facilitado
+                        la detección temprana de enfermedades, lo que aumenta las posibilidades de tratamiento exitoso.
+                    </p>
+                </div>
+                <img src="https://tse3.mm.bing.net/th/id/OIP.SdCGPWJ3PDzRaIlv1XjwPQHaEJ?rs=1&pid=ImgDetMain"
+                    height="200" class="image-right">
+            </div>
+
+            <h3>Medicina de Precisión y Farmacogenómica</h3>
+            <p>
+                La medicina de precisión utiliza información genética, ambiental y del estilo de vida para personalizar
+                la prevención, diagnóstico y tratamiento de enfermedades. La farmacogenómica estudia cómo las
+                variaciones genéticas individuales afectan la respuesta a los medicamentos. Algunas personas metabolizan
+                ciertos fármacos más rápido o más lento debido a variaciones en genes que codifican enzimas metabólicas.
+            </p>
+
+            <h3>Órganos Bioartificiales y Medicina Regenerativa</h3>
+            <p>
+                La medicina regenerativa busca reparar o reemplazar tejidos y órganos dañados. Las células madre,
+                capaces de diferenciarse en diversos tipos celulares, son fundamentales en esta área. Las células madre
+                embrionarias son pluripotentes, pudiendo convertirse en cualquier tipo de célula del cuerpo.
+            </p>
+
+            <p>
+                La bioimpresión 3D representa una frontera emocionante en la creación de tejidos y órganos. Utilizando
+                biotinta compuesta de células vivas y biomateriales, las bioimpresoras pueden construir estructuras
+                tridimensionales que imitan tejidos reales.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ventajas</th>
+                        <th>Desventajas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Permite el desarrollo de nuevos tratamientos y terapias más eficientes para combatir
+                            enfermedades</td>
+                        <td>Preocupaciones éticas: La manipulación genética puede plantear dilemas morales.</td>
+                    </tr>
+                    <tr>
+                        <td>Aumenta la resistencia de los cultivos y mejora la calidad de los alimentos</td>
+                        <td>Impacto ambiental: El uso de organismos modificados genéticamente puede afectar la
+                            biodiversidad.</td>
+                    </tr>
+                    <tr>
+                        <td>Diagnóstico temprano y tratamiento personalizado de enfermedades</td>
+                        <td>Costos elevados que limitan el acceso a estas tecnologías</td>
+                    </tr>
+                    <tr>
+                        <td>Producción de medicamentos más efectivos y seguros</td>
+                        <td>Desigualdad en el acceso global a tratamientos biotecnológicos</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Desafíos Éticos en Biotecnología Médica</h2>
+
+            <p>
+                Los avances biotecnológicos plantean cuestiones éticas profundas que la sociedad debe abordar. La
+                edición genética germinal, que modifica genes en embriones o células reproductivas, genera
+                preocupaciones particulares porque los cambios se transmitirían a generaciones futuras.
+            </p>
+
+            <div class="info-card">
+                <h3>Acceso Equitativo y Justicia en Salud</h3>
+                <p>
+                    Los tratamientos biotecnológicos avanzados suelen tener costos prohibitivos. Una sola infusión de
+                    terapia CAR-T puede costar cientos de miles de dólares, poniéndola fuera del alcance de la mayoría
+                    de la población mundial. Esto plantea preguntas sobre justicia distributiva.
+                </p>
+            </div>
+
+            <h2>El Futuro de la Biotecnología Médica</h2>
+
+            <p>
+                Los próximos años prometen avances aún más sorprendentes. La integración de inteligencia artificial con
+                biotecnología acelerará el descubrimiento de fármacos y la identificación de biomarcadores de
+                enfermedades. Los algoritmos de aprendizaje automático pueden analizar cantidades masivas de datos
+                genómicos, clínicos y de imágenes para detectar patrones que serían imposibles de discernir para los
+                humanos.
+            </p>
+        </div>
+
+        <hr>
+
+        <!-- Sección 3: Biotecnología Agrícola -->
+        <div id="inf3" class="section">
+            <h1>Biotecnología Agrícola</h1>
+
+            <p>
+                La <b>biotecnología agrícola</b> es un campo multidisciplinario que involucra el uso de técnicas
+                biotecnológicas
+                para mejorar la producción agrícola. Esta tecnología se basa en la modificación genética de organismos,
+                como plantas y animales, para hacerlos más resistentes a enfermedades, plagas, cambios climáticos, y
+                mejorar su productividad, calidad nutricional y adaptabilidad.
+            </p>
+
+            <div class="info-card">
+                <h3>1. Concepto de la biotecnología</h3>
+                <p>
+                    La biotecnología agrícola utiliza principios biológicos, químicos y físicos para diseñar soluciones
+                    innovadoras
+                    en la agricultura. Implica la manipulación genética de organismos vivos para obtener productos con
+                    características deseadas, como mayor resistencia a enfermedades, mayor rendimiento de cultivos, o
+                    mejor
+                    calidad de los alimentos.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>2. Historia de la Biotecnología Agrícola</h3>
+                <p>
+                    La biotecnología agrícola tiene raíces que se remontan a miles de años, pero fue a partir de la
+                    década de
+                    1970 cuando la ingeniería genética permitió avances significativos. A partir de ese momento, los
+                    científicos
+                    pudieron comenzar a modificar genéticamente organismos con más precisión y efectividad.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>3. Importancia de la Biotecnología Agrícola</h3>
+                <p>
+                    La biotecnología agrícola juega un papel crucial en la mejora de la seguridad alimentaria, ya que
+                    ayuda a
+                    aumentar la producción de alimentos de forma más eficiente y sostenible. Además, promueve el uso
+                    racional
+                    de los recursos naturales, lo que contribuye a la protección del medio ambiente.
+                </p>
+            </div>
+
+            <h2>Aplicaciones De La Biotecnología</h2>
+
+            <h3>Mejora de Genética De cultivos</h3>
+            <p>
+                Uno de los principales campos de aplicación de la biotecnología agrícola es la mejora genética de
+                cultivos. A
+                través de técnicas como la transgénesis, los investigadores modifican el ADN de las plantas para
+                introducir
+                características beneficiosas, tales como:
+            </p>
+
+            <ul>
+                <li><b>Resistencia a plaga y enfermedades:</b> Como el caso del Maíz Bt, que produce una toxina que
+                    repele a insectos.</li>
+                <li><b>Tolerancia a condiciones extremas:</b> Algunas plantas modificadas son más resistentes a la
+                    sequía, salinidad o temperaturas extremas.</li>
+                <li><b>Mejoras nutricionales:</b> El arroz dorado, por ejemplo, ha sido modificado para producir mayor
+                    cantidad de vitamina A.</li>
+            </ul>
+
+            <h3>2. Biofertilizantes y Biopesticidas</h3>
+            <p>
+                La biotecnología también se utiliza en el desarrollo de biofertilizantes y biopesticidas,
+                productos biológicos derivados de organismos como bacterias y hongos. Estos productos son más ecológicos
+                y menos tóxicos que los fertilizantes y pesticidas químicos, promoviendo una agricultura más sostenible.
+            </p>
+
+            <h3>3. Agricultura de Precisión</h3>
+            <p>
+                El uso de tecnologías avanzadas, como el análisis de datos y la ingeniería genética, permite que los
+                agricultores implementen prácticas más eficientes. Los sistemas de agricultura de precisión permiten
+                gestionar de manera más eficaz los recursos, minimizando el uso de agua, fertilizantes y pesticidas,
+                mientras se maximiza la producción.
+            </p>
+
+            <h2>Técnicas y Herramientas Utilizadas en la Biotecnología Agrícola</h2>
+
+            <h3>1. Ingeniería Genética</h3>
+            <p>
+                La ingeniería genética es la herramienta principal de la biotecnología agrícola.
+                Consiste en modificar los genes de una planta o un animal para introducirle características
+                deseadas. Algunas de las técnicas utilizadas en la ingeniería genética incluyen:
+            </p>
+
+            <ul>
+                <li><b>Transformación genética:</b> Introducción de material genético de un organismo en otro.</li>
+                <li><b>CRISPR-Cas9:</b> Una tecnología de edición genética que permite realizar modificaciones precisas
+                    en el ADN de organismos.</li>
+                <li><b>Cultura de tejidos vegetales:</b> Técnica que permite cultivar partes de plantas en laboratorio
+                    para producir nuevas variedades de plantas.</li>
+            </ul>
+
+            <h2>Ventajas y Desventajas</h2>
+
+            <h4>Ventajas</h4>
+            <ol>
+                <li>
+                    <b>Aumento en la productividad agrícola:</b> La biotecnología permite desarrollar cultivos más
+                    resistentes a enfermedades, plagas y condiciones climáticas extremas. Esto puede incrementar
+                    la producción y la estabilidad de los cultivos, asegurando una mayor disponibilidad de alimentos
+                    para la población mundial.
+                </li>
+                <li>
+                    <b>Reducción del uso de pesticidas y fertilizantes:</b> Los cultivos modificados genéticamente
+                    pueden
+                    ser diseñados para resistir plagas y enfermedades sin la necesidad de aplicar grandes cantidades
+                    de pesticidas, lo que reduce el impacto ambiental.
+                </li>
+                <li>
+                    <b>Mejora de la calidad nutricional:</b> La biotecnología permite modificar los cultivos para que
+                    tengan un contenido nutricional superior. Un ejemplo es el arroz dorado, que fue desarrollado para
+                    tener un mayor contenido de vitamina A.
+                </li>
+                <li>
+                    <b>Sostenibilidad a largo plazo:</b> Al hacer los cultivos más resistentes y eficientes, la
+                    biotecnología
+                    puede contribuir a una agricultura más sostenible, ayudando a utilizar menos recursos como agua y
+                    tierra.
+                </li>
+            </ol>
+
+            <h4>Desventajas</h4>
+            <ol>
+                <li>
+                    <b>Preocupaciones sobre seguridad alimentaria:</b> Aunque los cultivos transgénicos han sido
+                    evaluados extensamente, persisten preocupaciones públicas sobre posibles efectos a largo plazo en la
+                    salud humana.
+                </li>
+                <li>
+                    <b>Impacto en la biodiversidad:</b> La introducción masiva de cultivos transgénicos podría reducir
+                    la diversidad genética agrícola. Cuando los agricultores adoptan ampliamente unas pocas variedades
+                    mejoradas, las variedades tradicionales pueden perderse.
+                </li>
+                <li>
+                    <b>Dependencia de corporaciones:</b> Muchas semillas transgénicas están protegidas por patentes, lo
+                    que significa que los agricultores deben comprarlas anualmente a grandes corporaciones
+                    biotecnológicas.
+                </li>
+                <li>
+                    <b>Resistencia de plagas y malezas:</b> El uso continuo de cultivos resistentes a herbicidas ha
+                    llevado al desarrollo de malezas resistentes. Similarmente, las plagas pueden evolucionar
+                    resistencia a las toxinas producidas por cultivos Bt.
+                </li>
+            </ol>
+
+            <h2>Biotecnología Agrícola en Diferentes Regiones del Mundo</h2>
+
+            <h3>Adopción en América</h3>
+            <p>
+                Estados Unidos lidera mundialmente en adopción de cultivos biotecnológicos, con más del 90% de maíz,
+                soja y algodón cultivados siendo variedades transgénicas. Brasil y Argentina también son grandes
+                productores, habiendo adoptado masivamente la tecnología para mejorar la competitividad de su
+                agricultura.
+            </p>
+
+            <p>
+                En Canadá, la canola transgénica ha transformado la agricultura de las praderas, permitiendo a los
+                agricultores aumentar significativamente sus rendimientos y reducir el uso de herbicidas. México, centro
+                de origen del maíz, ha adoptado una posición más cautelosa.
+            </p>
+
+            <div class="info-card">
+                <h3>Situación en Europa</h3>
+                <p>
+                    Europa ha sido tradicionalmente más reticente hacia los cultivos transgénicos. La Unión Europea
+                    mantiene regulaciones estrictas, y varios países han prohibido el cultivo de organismos modificados
+                    genéticamente en su territorio. Esta postura refleja fuertes preocupaciones públicas sobre seguridad
+                    alimentaria e impacto ambiental.
+                </p>
+            </div>
+
+            <h3>Desarrollo en Asia y África</h3>
+            <p>
+                India ha adoptado ampliamente el algodón Bt, transformando su industria textil. Los pequeños
+                agricultores informan aumentos significativos en rendimientos y reducciones en el uso de insecticidas.
+                China invierte fuertemente en biotecnología agrícola, desarrollando variedades transgénicas de arroz,
+                trigo y otros cultivos básicos.
+            </p>
+
+            <p>
+                En África, países como Sudáfrica, Burkina Faso y Egipto han adoptado cultivos biotecnológicos,
+                principalmente algodón y maíz. Los defensores argumentan que la tecnología puede ayudar a abordar la
+                inseguridad alimentaria en el continente.
+            </p>
+
+            <h2>Innovaciones Recientes en Biotecnología Agrícola</h2>
+
+            <h3>Edición Genética de Precisión</h3>
+            <p>
+                Las nuevas herramientas de edición genética como CRISPR están revolucionando el mejoramiento de
+                cultivos. A diferencia de la transgénesis tradicional que introduce genes de otras especies, CRISPR
+                permite hacer modificaciones precisas en el genoma de la planta sin insertar ADN extraño.
+            </p>
+
+            <p>
+                Los científicos están utilizando CRISPR para desarrollar arroz resistente al tizón bacteriano, trigo con
+                mayor contenido proteico, tomates con vida útil prolongada y champiñones que no se oxidan. La precisión
+                de esta tecnología reduce significativamente el tiempo necesario para desarrollar nuevas variedades.
+            </p>
+
+            <div class="info-card">
+                <h3>Agricultura Vertical y Controlada</h3>
+                <p>
+                    La biotecnología está facilitando el desarrollo de sistemas de agricultura vertical donde los
+                    cultivos crecen en ambientes controlados con iluminación LED, nutrición precisa y condiciones
+                    óptimas. Estos sistemas pueden producir alimentos durante todo el año, independientemente del clima
+                    exterior.
+                </p>
+            </div>
+
+            <h3>Microbiomas y Agricultura Regenerativa</h3>
+            <p>
+                Los investigadores están descubriendo la importancia crucial del microbioma del suelo, la comunidad de
+                microorganismos que viven en y alrededor de las raíces de las plantas. La biotecnología permite
+                identificar y cultivar cepas microbianas beneficiosas que mejoran el crecimiento de plantas.
+            </p>
+
+            <p>
+                Los biofertilizantes y bioestimulantes basados en consorcios microbianos cuidadosamente diseñados pueden
+                reemplazar parcial o totalmente los fertilizantes sintéticos. Algunas bacterias fijan nitrógeno
+                atmosférico, haciéndolo disponible para las plantas.
+            </p>
+
+            <h2>Biotecnología y Cambio Climático</h2>
+
+            <p>
+                El cambio climático presenta desafíos sin precedentes para la agricultura. Las temperaturas crecientes,
+                patrones de precipitación alterados, sequías más frecuentes e intensas, y eventos climáticos extremos
+                amenazan la producción de alimentos globalmente.
+            </p>
+
+            <h3>Cultivos Tolerantes a Sequía y Estrés Térmico</h3>
+            <p>
+                Los científicos están identificando genes que confieren tolerancia a estrés hídrico y térmico, e
+                incorporándolos en cultivos importantes. Maíz, trigo y arroz tolerantes a sequía están siendo
+                desarrollados y probados en campo. Estos cultivos mantienen rendimientos razonables incluso bajo
+                condiciones de estrés que devastarían variedades convencionales.
+            </p>
+
+            <p>
+                Mecanismos complejos permiten esta tolerancia: algunos cultivos cierran sus estomas más eficientemente
+                para conservar agua, otros desarrollan sistemas radiculares más profundos que acceden a humedad del
+                subsuelo, y algunos producen proteínas protectoras que estabilizan membranas celulares bajo estrés.
+            </p>
+        </div>
+
+        <hr>
+
+        <!-- Sección 4: Biotecnología Industrial -->
+        <div id="inf4" class="section">
+            <h1>Biotecnología Industrial</h1>
+
+            <div class="info-card">
+                <h3>Definición y Alcance</h3>
+                <p>
+                    La <b>biotecnología industrial</b>, también conocida como biotecnología blanca, utiliza enzimas y
+                    microorganismos
+                    para crear productos sostenibles en sectores como química, textil, papel y biocombustibles. Esta
+                    rama busca
+                    reducir el impacto ambiental de los procesos industriales tradicionales.
+                </p>
+            </div>
+
+            <h2>Aplicaciones Principales</h2>
+
+            <div class="info-card">
+                <h3>1. Producción de Biocombustibles</h3>
+                <p>
+                    Los biocombustibles como el bioetanol y el biodiésel se producen mediante procesos biotecnológicos
+                    que
+                    fermentan biomasa vegetal. Estos combustibles renovables ayudan a reducir la dependencia de
+                    combustibles
+                    fósiles y disminuyen las emisiones de gases de efecto invernadero.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>2. Enzimas Industriales</h3>
+                <p>
+                    Las enzimas producidas biotecnológicamente se utilizan en detergentes, producción de papel,
+                    procesamiento
+                    de alimentos y fabricación de textiles. Estas enzimas permiten procesos más eficientes y menos
+                    contaminantes
+                    que los métodos químicos tradicionales.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>3. Bioplásticos</h3>
+                <p>
+                    La biotecnología permite crear plásticos biodegradables a partir de materiales renovables como
+                    almidón,
+                    celulosa o ácido poliláctico. Estos materiales reducen la acumulación de residuos plásticos y
+                    disminuyen la contaminación ambiental.
+                </p>
+            </div>
+
+            <h2>Ventajas de la Biotecnología Industrial</h2>
+            <ul>
+                <li><b>Reducción de emisiones contaminantes:</b> Los procesos biotecnológicos generan menos residuos
+                    tóxicos.</li>
+                <li><b>Eficiencia energética:</b> Muchos procesos requieren menos energía que los métodos tradicionales.
+                </li>
+                <li><b>Uso de recursos renovables:</b> Se emplean materias primas sostenibles en lugar de derivados del
+                    petróleo.</li>
+                <li><b>Productos biodegradables:</b> Los materiales creados son más amigables con el medio ambiente.
+                </li>
+            </ul>
+
+            <h2>Biorremediación y Gestión Ambiental</h2>
+
+            <div class="info-card">
+                <h3>Limpieza de Contaminantes mediante Microorganismos</h3>
+                <p>
+                    La biorremediación utiliza microorganismos, hongos o plantas para degradar, transformar o eliminar
+                    contaminantes del ambiente. Ciertas bacterias pueden descomponer hidrocarburos del petróleo,
+                    convirtiendo derrames ambientales en compuestos inofensivos.
+                </p>
+                <p>
+                    Los científicos han desarrollado consorcios microbianos especializados para diferentes tipos de
+                    contaminación. Bacterias del género Pseudomonas degradan eficientemente compuestos aromáticos
+                    policíclicos encontrados en sitios industriales contaminados.
+                </p>
+            </div>
+
+            <h3>Tratamiento de Aguas Residuales</h3>
+            <p>
+                La biotecnología industrial ha revolucionado el tratamiento de aguas residuales. Los sistemas biológicos
+                de tratamiento utilizan comunidades microbianas cuidadosamente mantenidas para descomponer materia
+                orgánica, eliminar nutrientes y neutralizar patógenos.
+            </p>
+
+            <p>
+                Las tecnologías emergentes incluyen reactores de membrana biológica que combinan tratamiento biológico
+                con filtración por membrana, produciendo agua de alta calidad apta para reutilización. Los humedales
+                construidos utilizan plantas y microorganismos en sistemas diseñados que imitan ecosistemas naturales.
+            </p>
+
+            <h2>Producción de Químicos Especializados</h2>
+
+            <h3>Fermentación Industrial Avanzada</h3>
+            <p>
+                La fermentación industrial ha evolucionado más allá de la producción tradicional de alcohol y ácidos
+                orgánicos. Microorganismos modificados ahora producen una amplia gama de químicos especializados,
+                aminoácidos, vitaminas y sabores.
+            </p>
+
+            <p>
+                Los procesos de fermentación modernos utilizan biorreactores sofisticados con control preciso de
+                temperatura, pH, oxígeno disuelto y concentración de nutrientes. Los sensores en tiempo real monitorean
+                el metabolismo microbiano, permitiendo ajustes dinámicos para optimizar la productividad.
+            </p>
+
+            <div class="info-card">
+                <h3>Producción de Proteínas Recombinantes</h3>
+                <p>
+                    Más allá de aplicaciones médicas, las proteínas recombinantes tienen numerosos usos industriales.
+                    Enzimas para detergentes, procesamiento de alimentos, fabricación de papel y producción de
+                    biocombustibles se producen mediante fermentación microbiana.
+                </p>
+                <p>
+                    La quimosina recombinante reemplaza el cuajo animal en la producción de queso, ofreciendo una
+                    alternativa vegetariana más consistente y económica. Las celulasas recombinantes mejoran procesos de
+                    blanqueo de papel, reduciendo el uso de cloro.
+                </p>
+            </div>
+
+            <h2>Biotecnología en la Industria Textil</h2>
+
+            <h3>Fibras Biobasadas</h3>
+            <p>
+                La industria textil está adoptando biotecnología para crear fibras sostenibles. Bacterias modificadas
+                producen celulosa bacteriana, un material con propiedades superiores al algodón en términos de
+                resistencia y pureza. Este material crece en biorreactores sin necesidad de tierra, agua de riego o
+                pesticidas.
+            </p>
+
+            <p>
+                Las proteínas de seda producidas por levaduras modificadas permiten crear fibras similares a la seda de
+                araña, conocida por su extraordinaria resistencia y elasticidad. Empresas están desarrollando métodos
+                escalables para producir estas proteínas.
+            </p>
+
+            <h3>Procesos de Tintado Biológico</h3>
+            <p>
+                Los tintes sintéticos tradicionales son altamente contaminantes, generando aguas residuales tóxicas
+                difíciles de tratar. La biotecnología ofrece alternativas mediante la producción de tintes naturales
+                usando fermentación microbiana.
+            </p>
+
+            <p>
+                Enzimas específicas también mejoran procesos de tintado, permitiendo que los colorantes penetren mejor
+                las fibras a temperaturas más bajas y con menos químicos auxiliares. Esto reduce significativamente el
+                consumo energético y la generación de residuos.
+            </p>
+
+            <h2>Biocombustibles de Nueva Generación</h2>
+
+            <h3>Biocombustibles Avanzados</h3>
+            <p>
+                Los biocombustibles de primera generación, derivados de cultivos alimentarios como maíz y caña de
+                azúcar, han sido criticados por competir con la producción de alimentos. Los biocombustibles de segunda
+                y tercera generación utilizan materias primas no alimentarias, resolviendo este dilema ético.
+            </p>
+
+            <p>
+                El desafío técnico principal es descomponer la estructura compleja de la lignocelulosa en azúcares
+                fermentables. Los avances biotecnológicos han producido cócteles enzimáticos más eficientes que rompen
+                la celulosa y hemicelulosa.
+            </p>
+
+            <div class="info-card">
+                <h3>Biodiésel de Algas</h3>
+                <p>
+                    Las microalgas representan una fuente prometedora de biocombustibles. Ciertas especies acumulan
+                    hasta 50% de su peso seco en lípidos que pueden convertirse en biodiésel. Las algas crecen
+                    rápidamente, no requieren tierra cultivable, pueden cultivarse en agua salada o residual.
+                </p>
+            </div>
+
+            <h3>Biogás y Digestión Anaeróbica</h3>
+            <p>
+                La digestión anaeróbica convierte residuos orgánicos en biogás, una mezcla de metano y dióxido de
+                carbono que puede usarse para generar electricidad y calor. Los sistemas modernos procesan una amplia
+                variedad de materias primas: desechos agrícolas, residuos alimentarios, lodos de depuradoras.
+            </p>
+
+            <h2>Biomateriales y Polímeros Biodegradables</h2>
+
+            <h3>Plásticos de Origen Biológico</h3>
+            <p>
+                La contaminación plástica es uno de los desafíos ambientales más urgentes. Los bioplásticos ofrecen
+                alternativas potenciales. El ácido poliláctico se produce mediante fermentación de azúcares vegetales y
+                puede moldearse en diversos productos.
+            </p>
+
+            <p>
+                Estos materiales son verdaderamente biodegradables, descomponiéndose completamente en compost industrial
+                en semanas o meses. Sin embargo, enfrentan desafíos de costo, propiedades mecánicas y requisitos de
+                procesamiento.
+            </p>
+
+            <div class="info-card">
+                <h3>Biocompositos y Materiales Híbridos</h3>
+                <p>
+                    Los biocompositos combinan polímeros biológicos con fibras naturales como cáñamo, lino o bambú,
+                    creando materiales con propiedades mecánicas mejoradas. Estos materiales encuentran aplicaciones en
+                    automotriz, construcción y embalaje.
+                </p>
+            </div>
+
+            <h2>Economía Circular y Biotecnología Industrial</h2>
+
+            <p>
+                El concepto de economía circular busca eliminar desperdicios diseñando productos y procesos donde los
+                materiales se reutilizan continuamente. La biotecnología industrial es fundamental para esta visión,
+                convirtiendo flujos de residuos en recursos valiosos.
+            </p>
+
+            <h3>Valorización de Residuos</h3>
+            <p>
+                Los residuos agrícolas y forestales contienen azúcares, lignina y otras moléculas valiosas. Las
+                tecnologías de biorrefinería fraccionan esta biomasa compleja en componentes que se convierten en
+                múltiples productos: combustibles, químicos, materiales y energía.
+            </p>
+
+            <p>
+                Los residuos alimentarios, que representan aproximadamente un tercio de todos los alimentos producidos,
+                son objetivos principales para valorización biotecnológica. La fermentación puede convertirlos en ácidos
+                orgánicos, etanol o biogás.
+            </p>
+
+            <h2>Desafíos y Perspectivas Futuras</h2>
+            <p>
+                Aunque la biotecnología industrial ofrece numerosas ventajas, enfrenta desafíos como los altos costos
+                iniciales
+                de investigación y desarrollo, la necesidad de infraestructura especializada y la competencia con
+                procesos
+                industriales establecidos. Sin embargo, con el creciente enfoque en la sostenibilidad y las políticas
+                ambientales
+                más estrictas, se espera que esta área experimente un crecimiento significativo en las próximas décadas.
+            </p>
+        </div>
+
+        <!-- Sección Final: Conclusión General -->
+        <div class="section">
+            <h1>Conclusión General</h1>
+
+            <p>
+                La biotecnología representa una de las herramientas más poderosas de la ciencia moderna, con
+                aplicaciones
+                que abarcan prácticamente todos los aspectos de nuestra vida. Desde la medicina hasta la agricultura y
+                la
+                industria, esta disciplina multidisciplinaria continúa revolucionando la forma en que enfrentamos los
+                desafíos globales.
+            </p>
+
+            <div class="info-card">
+                <h3>Impacto en la Sociedad</h3>
+                <p>
+                    El desarrollo de la biotecnología ha permitido avances extraordinarios en la salud humana, la
+                    producción
+                    de alimentos y la sostenibilidad ambiental. Terapias génicas, cultivos resistentes y procesos
+                    industriales
+                    limpios son solo algunos ejemplos del potencial transformador de esta tecnología.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>Responsabilidad y Ética</h3>
+                <p>
+                    Con grandes avances vienen grandes responsabilidades. Es fundamental que el desarrollo
+                    biotecnológico
+                    se lleve a cabo con consideraciones éticas rigurosas, evaluaciones de impacto ambiental exhaustivas
+                    y un compromiso con el bienestar de toda la humanidad.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>El Futuro de la Biotecnología</h3>
+                <p>
+                    Mirando hacia el futuro, la biotecnología promete soluciones innovadoras para los desafíos más
+                    urgentes
+                    de nuestro tiempo: el cambio climático, la escasez de recursos, las enfermedades emergentes y la
+                    seguridad alimentaria global.
+                </p>
+            </div>
+
+            <p style="text-align: center; font-size: 1.2em; margin-top: 40px; color: #667eea; font-weight: 600;">
+                La biotecnología no es solo ciencia del futuro, es la ciencia del presente que está moldeando
+                el mundo en el que vivimos.
+            </p>
+        </div>
+
+        <div id="inf5" class="section">
+            <h1>Formulario</h1>
+            <h2>Libro de visitas</h2>
+            <FORM action="mailto:email" method="POST" enctype="text/plain">
+                Tu nombre
+                <br><input type="text" name="Nombre">
+                <p>Escribe tus comentarios<br>
+                    <textarea name="Comentarios" rows="6" cols="40"></textarea>
+                </p>
+                <input type="submit" value="enviar datos">
+                <input type="reset" value="Borrar datos">
+            </FORM>
+        </div>
+
+        <div id="inf6" class="section">
+            <section class="map-section">
+                <div class="image-map-container">
+                    <h2>Sígueme en <span class="color-acento">Redes Sociales</span></h2>
+
+                    <div class="social-maps-grid">
+                        <!-- Instagram -->
+                        <div class="image-map-wrapper">
+                            <h3>Instagram</h3>
+                            <img class="img" src="imagenes/iglogo.png" alt="Logo de Instagram" usemap="#instagram-map">
+
+                            <map name="instagram-map">
+                                <area shape="rect" coords="20, 150, 100, 250"
+                                    href="https://www.instagram.com/omar_ortiz.wav?igsh=dXZteTRqYzFtcDdo"
+                                    alt="Sígueme en Instagram" title="Visita mi perfil de Instagram" target="_blank">
+
+                                <area shape="rect" coords="150, 100, 350, 350"
+                                    href="https://www.instagram.com/gzmzaaid?igsh=YnhzcjRiOGIycnZm&utm_source=qr"
+                                    alt="Sígueme en Instagram" title="Visita mi perfil de Instagram" target="_blank">
+
+                                <area shape="circle" coords="400, 400, 60"
+                                    href="https://www.instagram.com/gzmzaaid?igsh=YnhzcjRiOGIycnZm&utm_source=qr"
+                                    alt="Sígueme en Instagram" title="Visita mi perfil de Instagram" target="_blank">
+
+                                <area shape="default"
+                                    href="https://www.instagram.com/gzmzaaid?igsh=YnhzcjRiOGIycnZm&utm_source=qr"
+                                    alt="Sígueme en Instagram" title="Visita mi perfil de Instagram" target="_blank">
+                            </map>
+                            <p class="social-text">Instagram</p>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="image-map-wrapper whatsapp">
+                            <h3>WhatsApp</h3>
+                            <img class="img" src="imagenes/descarga.png" alt="Logo de WhatsApp" usemap="#whatsapp-map">
+
+                            <map name="whatsapp-map">
+                                <area shape="circle" coords="256, 256, 200" href="https://wa.me/523317749778"
+                                    alt="Contáctame en WhatsApp" title="Envíame un mensaje" target="_blank">
+
+                                <area shape="default" href="https://wa.me/523317749778" alt="Contáctame en WhatsApp"
+                                    title="Envíame un mensaje" target="_blank">
+                            </map>
+                            <p class="social-text">WhatsApp</p>
+                        </div>
+
+                        <!-- TikTok -->
+                        <div class="image-map-wrapper tiktok">
+                            <h3>Tik Tok</h3>
+                            <img class="img" src="imagenes/tiklogo.png" alt="Logo de tiktok" usemap="#tiktok-map">
+
+                            <map name="tiktok-map">
+                                <area shape="circle" coords="256, 256, 200"
+                                    href="https://www.tiktok.com/@uemyi?_r=1&_d=egd13kdj8a9187&sec_uid=MS4wLjABAAAAM-JZh4kA096_VVUOy_J5sQ1THgVgtLzVfjSS3MQMYTNrRPW2SjsTWqrdIEHP_Lnp&share_author_id=6837246828388516869&sharer_language=es&source=h5_m&u_code=dcmk4di812i5e3&item_author_type=1&utm_source=copy&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=ABB4A5EA-4B54-4E3C-A209-53F9A26A0D55&user_id=6837246828388516869&sec_user_id=MS4wLjABAAAAM-JZh4kA096_VVUOy_J5sQ1THgVgtLzVfjSS3MQMYTNrRPW2SjsTWqrdIEHP_Lnp&social_share_type=4&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233"
+                                    alt="Sígueme en Tik tok" title="Visita mi perfil de tik tok" target="_blank">
+
+                                <area shape="default"
+                                    href="https://www.tiktok.com/@uemyi?_r=1&_d=egd13kdj8a9187&sec_uid=MS4wLjABAAAAM-JZh4kA096_VVUOy_J5sQ1THgVgtLzVfjSS3MQMYTNrRPW2SjsTWqrdIEHP_Lnp&share_author_id=6837246828388516869&sharer_language=es&source=h5_m&u_code=dcmk4di812i5e3&item_author_type=1&utm_source=copy&tt_from=copy&enable_checksum=1&utm_medium=ios&share_link_id=ABB4A5EA-4B54-4E3C-A209-53F9A26A0D55&user_id=6837246828388516869&sec_user_id=MS4wLjABAAAAM-JZh4kA096_VVUOy_J5sQ1THgVgtLzVfjSS3MQMYTNrRPW2SjsTWqrdIEHP_Lnp&social_share_type=4&ug_btm=b8727,b0&utm_campaign=client_share&share_app_id=1233"
+                                    alt="Sígueme en Tik Tok" title="Visita mi perfil de Tik tok" target="_blank">
+                            </map>
+                            <p class="social-text">Tik Tok</p>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 30px; color: #666; font-size: 1.1em;">
+                        Haz clic en cualquier logo para conectar conmigo
+                    </p>
+                </div>
+            </section>
+
+            <style>
+                /* Estilos para la sección de mapas sociales */
+                .image-map-container {
+                    text-align: center;
+                    margin: 60px auto;
+                    max-width: 1200px;
+                    padding: 0 20px;
+                }
+
+                .image-map-container h2 {
+                    font-size: 2.5em;
+                    margin-bottom: 50px;
+                    color: #333;
+                }
+
+                .social-maps-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 40px;
+                    margin: 0 auto;
+                    max-width: 1000px;
+                }
+
+                .image-map-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    border-radius: 15px;
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                    padding: 25px;
+                    background: linear-gradient(135deg, #ef54cd 0%, #be54ef 100%);
+                }
+
+                .image-map-wrapper.whatsapp {
+                    background: linear-gradient(135deg, #18afca 0%, #1a8006 100%);
+                }
+
+                .image-map-wrapper.tiktok {
+                    background: linear-gradient(135deg, #63024b 0%, #9b08df 100%);
+                }
+
+                .image-map-wrapper h3 {
+                    color: white;
+                    font-size: 1.5em;
+                    margin: 0 0 15px 0;
+                    font-weight: 600;
+                }
+
+                .image-map-wrapper:hover {
+                    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+                    transform: translateY(-8px) scale(1.03);
+                }
+
+                .image-map-wrapper img {
+                    max-width: 200px;
+                    height: 200px;
+                    display: block;
+                    border-radius: 10px;
+                    background: white;
+                    padding: 20px;
+                    cursor: pointer;
+                    transition: transform 0.3s ease;
+                }
+
+                .image-map-wrapper img:hover {
+                    transform: scale(1.05);
+                }
+
+                .social-text {
+                    margin-top: 15px;
+                    color: white;
+                    font-size: 1.1em;
+                    font-weight: 500;
+                }
+
+                .map-section {
+                    background: linear-gradient(135deg, #f9f9f9, white);
+                    padding: 60px 20px;
+                    margin: 40px 0;
+                    border-radius: 20px;
+                }
+
+                @media (max-width: 768px) {
+                    .image-map-container h2 {
+                        font-size: 2em;
+                    }
+
+                    .social-maps-grid {
+                        grid-template-columns: 1fr;
+                        gap: 30px;
+                    }
+
+                    .image-map-wrapper {
+                        padding: 20px;
+                    }
+
+                    .image-map-wrapper img {
+                        max-width: 180px;
+                        height: 180px;
+                    }
+                }
+            </style>
+        </div>
+    </div>
+</body>
+
+</html>
